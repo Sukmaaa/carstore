@@ -27,7 +27,7 @@ header("Expires: 0");
     }
 </style>
 <h3>
-    <center>LAPORAN DATA PEMINJAMAN BUKU</center>
+    <center>LAPORAN DATA PEMINJAMAN MOBIL</center>
 </h3>
 <br />
 <table class="table-data" border=1>
@@ -35,7 +35,7 @@ header("Expires: 0");
         <tr>
             <th>No</th>
             <th>Nama Anggota</th>
-            <th>Judul Buku</th>
+            <th>Nama Mobil</th>
             <th>Tanggal Pinjam</th>
             <th>Tanggal Kembali</th>
             <th>Tanggal Pengembalian</th>
@@ -51,7 +51,7 @@ header("Expires: 0");
             <tr>
                 <td scope="row"><?= $no++; ?></td>
                 <td><?= $l['nama']; ?></td>
-                <td><?= $l['judul_buku']; ?></td>
+                <td><?= $l['nama_mobil']; ?></td>
                 <td><?= $l['tgl_pinjam']; ?></td>
                 <td><?= $l['tgl_kembali']; ?></td>
                 <td><?= $l['tgl_pengembalian']; ?></td>

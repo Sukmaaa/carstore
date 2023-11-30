@@ -9,7 +9,7 @@
                                 <th>No Pinjam</th>
                                 <th>Tanggal Pinjam</th>
                                 <th>ID User</th>
-                                <th>ID Buku</th>
+                                <th>ID Mobil</th>
                                 <th>Tanggal Kembali</th>
                                 <th>Tanggal Pengembalian</th>
                                 <th>Terlambat</th>
@@ -25,12 +25,12 @@
                                     <td><?= $p['no_pinjam']; ?></td>
                                     <td><?= $p['tgl_pinjam']; ?></td>
                                     <td><?= $p['id_user']; ?></td>
-                                    <td><?= $p['id_buku']; ?></td>
+                                    <td><?= $p['id_mobil']; ?></td>
                                     <td><?= $p['tgl_kembali']; ?></td>
                                     <td>
                                         <?php
                                         if ($p['status'] == 'Pinjam') {
-                                            echo 'Anda belum mengembalikan Buku.';
+                                            echo 'Anda belum mengembalikan Mobil.';
                                         } else {
                                             echo date('Y-m-d');
                                         ?>
@@ -47,13 +47,13 @@
                                         $selisih = $tanggal_kembali_diharapkan->diff($tanggal_pengembalian_sebenarnya)->format("%R%a");
 
                                         if ($selisih > 0) {
-                                            echo "Anda terlambat mengembalikan buku selama " . $selisih . " hari.";
+                                            echo "Anda terlambat mengembalikan Mobil selama " . $selisih . " hari.";
                                         } elseif ($selisih < 0) {
-                                            echo "Anda mengembalikan buku lebih awal " . abs($selisih) . " hari.";
+                                            echo "Anda mengembalikan Mobil lebih awal " . abs($selisih) . " hari.";
                                         } elseif ($p['status'] == 'Pinjam') {
-                                            echo "Anda sedang meminjam Buku.";
+                                            echo "Anda sedang meminjam Mobil.";
                                         } else {
-                                            "Anda mengembalikan buku tepat waktu.";
+                                            "Anda mengembalikan Mobil tepat waktu.";
                                         }
                                         ?>
                                     </td>
@@ -78,7 +78,7 @@
                                         <?php if ($p['status'] == "Kembali") { ?>
                                             <i class="btn btn-sm btn-outline-secondary"><i class="fas fa-fw fa-edit"></i>Ubah Status</i>
                                         <?php } else { ?>
-                                            <a class="btn btn-sm btn-outline-info" href="<?= base_url('pinjam/ubahStatus/' . $p['id_buku'] . '/' . $p['no_pinjam']); ?>"><i class="fas fa-fw fa-edit"></i>Ubah Status</a>
+                                            <a class="btn btn-sm btn-outline-info" href="<?= base_url('pinjam/ubahStatus/' . $p['id_mobil'] . '/' . $p['no_pinjam']); ?>"><i class="fas fa-fw fa-edit"></i>Ubah Status</a>
                                         <?php } ?>
                                     </td>
                                 </tr>

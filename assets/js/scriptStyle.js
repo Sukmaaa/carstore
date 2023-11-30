@@ -104,12 +104,21 @@ tombol2.addEventListener("click", function (e) {
 });
 
 const navbar = document.querySelector("#navbar");
+const imageLogo = document.querySelector("#img-logo");
 
 window.addEventListener("scroll", function () {
 	if (window.scrollY > 80) {
 		navbar.classList.add("nav-floating");
+
+		const additionalText = "nerostore-logo.png";
+
+		imageLogo.src = imageLogo.src.replace(/[^/]+$/, additionalText);
 	} else if (window.scrollY < 80) {
 		navbar.classList.remove("nav-floating");
+
+		const additionalText = "nerostore-logo-white.png";
+
+		imageLogo.src = imageLogo.src.replace(/[^/]+$/, additionalText);
 	}
 });
 
@@ -207,4 +216,10 @@ const loginSidebar = document.querySelector(".list-tombol a.loginSidebar");
 loginSidebar.addEventListener("click", function (e) {
 	e.preventDefault();
 	formLogin.style.display = "flex";
+});
+
+const tombolNotifikasi = document.querySelector(".tombol-notifikasi");
+const notifikasi = document.querySelector(".notifikasi");
+tombolNotifikasi.addEventListener("click", function () {
+	notifikasi.style.display = "none";
 });

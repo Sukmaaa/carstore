@@ -1,452 +1,495 @@
 * {
-  margin: 0px;
-  padding: 0px;
-  font-size: 15px;
-  font-family: Arial, Helvetica, sans-serif;
-  box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+	font-size: 15px;
+	font-family: Arial, Helvetica, sans-serif;
+	box-sizing: border-box;
 }
 
 body {
-  background-color: rgb(31, 31, 31);
-  overflow-x: hidden;
+	background: hsla(0, 0%, 13%, 1);
+
+	background: linear-gradient(
+		90deg,
+		hsla(0, 0%, 13%, 1) 0%,
+		hsla(0, 0%, 24%, 1) 100%
+	);
+
+	background: -moz-linear-gradient(
+		90deg,
+		hsla(0, 0%, 13%, 1) 0%,
+		hsla(0, 0%, 24%, 1) 100%
+	);
+
+	background: -webkit-linear-gradient(
+		90deg,
+		hsla(0, 0%, 13%, 1) 0%,
+		hsla(0, 0%, 24%, 1) 100%
+	);
+
+	filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#222222", endColorstr="#3E3E3E", GradientType=1 );
+	overflow-x: hidden;
 }
 
 nav {
-  width: 100%;
-  height: 120px;
+	width: 100%;
+	height: 120px;
 
-  display: flex;
-  justify-content: space-around;
+	display: flex;
+	justify-content: space-around;
 }
 
 .tombolKeluar {
-  color: white;
-  margin: 10px;
+	color: white;
+	margin: 10px;
 }
 
 .tombolKeluar a {
-  transition: 300ms ease-in-out;
-  color: white;
+	transition: 300ms ease-in-out;
+	color: white;
 }
 
 .tombolKeluar a:hover {
-  color: gold;
+	color: gold;
 }
 
 .jenisMobil {
-  box-sizing: border-box;
-  padding: 30px;
-  height: 100%;
-  width: 30%;
-  display: flex;
-  align-items: center;
+	box-sizing: border-box;
+	padding: 30px;
+	height: 100%;
+	width: 30%;
+	display: flex;
+	align-items: center;
 }
 
 .namaMobil h1 {
-  color: white;
-  font-size: 1.2rem;
+	color: white;
+	font-size: 1.2rem;
 }
 
 .namaMobil h3 {
-  color: white;
-  font-size: 1rem;
+	color: white;
+	font-size: 1rem;
 }
 
 .lokasi {
-  justify-content: center;
-  align-items: center;
+	justify-content: center;
+	align-items: center;
 
-  display: flex;
-  width: 50%;
+	display: flex;
+	width: 50%;
 }
 
 .namaLokasi h1 {
-  font-size: 0.9rem;
+	font-size: 0.9rem;
 }
 
 .namaLokasi h3 {
-  font-size: 0.7rem;
+	font-size: 0.7rem;
 }
 
 .lainnya {
-  color: white;
-  box-sizing: border-box;
+	color: white;
+	box-sizing: border-box;
 
-  height: 100%;
-  width: 30%;
-  display: flex;
+	height: 100%;
+	width: 30%;
+	display: flex;
 }
 
 .kontak {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
-  height: 100%;
-  width: 50%;
+	height: 100%;
+	width: 50%;
 }
 
 .kontak a {
-  border-radius: 10px;
-  color: white;
-  text-decoration: none;
-  background-color: rgb(37, 37, 37);
-  padding: 20px;
-  transition: 300ms ease-in-out;
+	border-radius: 10px;
+	color: white;
+	text-decoration: none;
+	background-color: rgb(37, 37, 37);
+	padding: 20px;
+	transition: 300ms ease-in-out;
 }
 
 .kontak a:hover {
-  background-color: gold;
+	background-color: gold;
 }
 
 .container {
-  height: 630px;
-  width: 100%;
-  display: flex;
+	height: 630px;
+	width: 100%;
+	display: flex;
 }
 
 .kontenKiri {
-  box-sizing: border-box;
-  width: 50%;
-  height: 100%;
+	box-sizing: border-box;
+	width: 50%;
+	height: 100%;
 }
 
 .kontenKiri-dalam {
-  width: 100%;
-  height: 100%;
+	width: 100%;
+	height: 100%;
 }
 
 .kontenMobil {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 70%;
-  width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 70%;
+	width: 100%;
 }
 
 .kontenSpesifikasi {
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  height: 30%;
-  width: 100%;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	height: 30%;
+	width: 100%;
 }
 
 .kontenSpesifikasi ul {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
 }
 
 .kontenSpesifikasi li {
-  cursor: pointer;
-  border-radius: 20px;
-  padding: 20px;
-  background-color: rgb(24, 24, 24);
-  list-style-type: none;
-  transition: 300ms ease-in-out;
+	cursor: pointer;
+	border-radius: 20px;
+	padding: 20px;
+	background-color: rgb(24, 24, 24);
+	list-style-type: none;
+	transition: 300ms ease-in-out;
 }
 
 .kontenSpesifikasi li:hover {
-  background-color: gold;
+	background-color: gold;
 }
 
 .spek {
-  display: none;
-  opacity: 0.7;
-  border-radius: 10px;
-  background-color: gold;
-  height: 100px;
-  width: 300px;
-  position: absolute;
-  bottom: 150px;
-  /* display: flex; */
+	display: none;
+	opacity: 0.7;
+	border-radius: 10px;
+	background-color: gold;
+	height: 100px;
+	width: 300px;
+	position: absolute;
+	bottom: 150px;
+	/* display: flex; */
 }
 
 .logoSpek {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 25%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 25%;
 }
 
 .keteranganSpek {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 75%;
-  height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 75%;
+	height: 100%;
 }
 
 .keteranganSpek p {
-  font-size: 0.8rem;
+	font-size: 0.8rem;
 }
 
 .spek.bensin {
-  margin-left: -17px;
+	margin-left: -17px;
 }
 
 .spek.kecepatan {
-  margin-left: -190px;
+	margin-left: -190px;
 }
 
 .kontenKanan {
-  width: 50%;
-  height: 100%;
+	width: 50%;
+	height: 100%;
 }
 
 .detailKendaraan {
-  display: flex;
-  width: 100%;
-  height: 30%;
+	display: flex;
+	width: 100%;
+	height: 30%;
 }
 
 .deskripsi {
-  color: white;
-  width: 50%;
-  padding: 10px;
+	color: white;
+	width: 50%;
+	padding: 10px;
 }
 .deskripsi td {
-  font-size: 0.8rem;
-  padding: 10px;
+	font-size: 0.8rem;
+	padding: 10px;
 }
 
 .logo {
-  width: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	width: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 .logo img {
-  filter: grayscale();
-  width: 100px;
-  transition: 300ms ease-in-out;
+	filter: grayscale();
+	width: 100px;
+	transition: 300ms ease-in-out;
 }
 
 .logo img:hover {
-  filter: none;
+	filter: none;
 }
 
 .form {
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  background-color: rgb(73, 73, 73);
-  width: 100%;
-  height: 60%;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	background-color: rgb(73, 73, 73);
+	width: 90%;
+	height: 60%;
+	margin-left: 10%;
 }
 
 .judulForm {
-  padding: 20px;
-  text-align: center;
-  height: 30%;
-  width: 100%;
+	padding: 20px;
+	text-align: center;
+	height: 30%;
+	width: 100%;
 }
 
 .judulForm h1 {
-  color: white;
-  font-size: 1.5rem;
+	color: white;
+	font-size: 1.5rem;
 }
 
 .judulForm p {
-  font-style: italic;
-  color: gold;
-  font-size: 0.8rem;
+	font-style: italic;
+	color: gold;
+	font-size: 0.8rem;
 }
 
 .tableForm {
-  margin-left: 20px;
+	margin-left: 20px;
 }
 
 .tableForm td {
-  color: white;
-  padding: 10px;
+	color: white;
+	padding: 10px;
 }
 
 td.button {
-  text-align: center;
+	text-align: center;
 }
 .tableForm td a {
-  border-radius: 5px;
-  background-color: rgb(53, 53, 53);
-  text-decoration: none;
-  color: white;
-  padding: 10px;
-  transition: 300ms ease-in-out;
+	border-radius: 5px;
+	background-color: rgb(53, 53, 53);
+	text-decoration: none;
+	color: white;
+	padding: 10px;
+	transition: 300ms ease-in-out;
 }
 
 .tableForm td a:hover {
-  color: black;
-  background-color: white;
+	color: black;
+	background-color: white;
 }
 
 .tableForm td input {
-  border: none;
-  border-radius: 5px;
-  padding: 3px 10px;
-  outline: none;
+	border: none;
+	border-radius: 5px;
+	padding: 3px 10px;
+	outline: none;
 }
 
 .tableForm td input:focus {
-  box-shadow: 0px 0px 5px gold;
+	box-shadow: 0px 0px 5px gold;
 }
 
 .kontenKanan-dalam {
-  width: 100%;
-  height: 100%;
+	width: 100%;
+	height: 100%;
 }
 
 .tombolSamping {
-  display: none;
+	display: none;
 }
 
 .tombolBurger {
-  display: none;
+	display: none;
 }
 
 /* responsive */
 /* tablet */
 @media screen and (max-width: 768px) {
-  .jenisMobil {
-    width: 50%;
-  }
+	.jenisMobil {
+		width: 50%;
+	}
 
-  .namaMobil h1 {
-    font-size: 0.9rem;
-  }
+	.namaMobil h1 {
+		font-size: 0.9rem;
+	}
 
-  .namaMobil h3 {
-    font-size: 0.7rem;
-  }
+	.namaMobil h3 {
+		font-size: 0.7rem;
+	}
 
-  .lainnya {
-    color: white;
-    height: 100%;
-    width: 50%;
-    display: flex;
-  }
+	.lainnya {
+		color: white;
+		height: 100%;
+		width: 50%;
+		display: flex;
+	}
 
-  .lokasi {
-    width: 50%;
-  }
+	.lokasi {
+		width: 50%;
+	}
 
-  .kontak a {
-    font-size: 0.7rem;
-  }
+	.kontak a {
+		font-size: 0.7rem;
+	}
 
-  .container {
-    flex-direction: column;
-    display: flex;
-  }
+	.container {
+		flex-direction: column;
+		display: flex;
+	}
 
-  .kontenKiri {
-    width: 100%;
-  }
+	.kontenKiri {
+		width: 100%;
+	}
 
-  .kontenKiri-dalam {
-    height: 550px;
-  }
+	.kontenKiri-dalam {
+		height: 550px;
+	}
 
-  .kontenKanan {
-    width: 100%;
-  }
+	.kontenKanan {
+		width: 100%;
+	}
 
-  .spek {
-    margin-bottom: 50px;
-  }
+	.spek {
+		margin-bottom: 50px;
+	}
 
-  .spek.bensin {
-    margin-left: -50px;
-  }
+	.spek.bensin {
+		margin-left: -50px;
+	}
 
-  .spek.kecepatan {
-    margin-left: -200px;
-  }
+	.spek.kecepatan {
+		margin-left: -200px;
+	}
 
-  .kontenMobil img {
-    margin-bottom: 10px;
-  }
+	.kontenMobil img {
+		margin-bottom: 10px;
+	}
 
-  .kontenKanan-dalam {
-    height: 700px;
-  }
+	.kontenKanan-dalam {
+		height: 700px;
+	}
 }
 
 /* handphone */
 @media screen and (max-width: 576px) {
-  .lainnya {
-    display: none;
-  }
+	.lainnya {
+		display: none;
+	}
 
-  .tombolSamping {
-    background-color: rgb(21, 21, 21);
-    width: 40%;
-    height: 100vmax;
-    position: absolute;
-    display: none;
-    left: 0px;
-    text-align: right;
-  }
+	.tombolSamping {
+		background-color: rgb(21, 21, 21);
+		width: 40%;
+		height: 100vmax;
+		position: absolute;
+		display: none;
+		left: 0px;
+		text-align: right;
+	}
 
-  .tombolSamping ul li {
-    color: white;
-    padding: 20px 20px;
-    list-style-type: none;
-  }
+	.tombolSamping ul li {
+		color: white;
+		padding: 20px 20px;
+		list-style-type: none;
+	}
 
-  .tombolSamping ul li a {
-    transition: 300ms ease-in-out;
-    color: white;
-    text-decoration: none;
-  }
-  .nama {
-    background-color: gold;
-  }
+	.tombolSamping ul li a {
+		transition: 300ms ease-in-out;
+		color: white;
+		text-decoration: none;
+	}
+	.nama {
+		background-color: gold;
+	}
 
-  .nama h1 {
-    font-size: 0.8rem;
-    color: white;
-    padding: 20px;
-  }
+	.nama h1 {
+		font-size: 0.8rem;
+		color: white;
+		padding: 20px;
+	}
 
-  .tombolSamping ul li a:hover {
-    color: gold;
-  }
+	.tombolSamping ul li a:hover {
+		color: gold;
+	}
 
-  .tombolClose {
-    padding: 20px;
-  }
+	.tombolClose {
+		padding: 20px;
+	}
 
-  .tombolBurger {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-  }
+	.tombolBurger {
+		justify-content: center;
+		align-items: center;
+		display: flex;
+	}
 
-  .spek.mesin {
-    margin-bottom: 50px;
-    margin-left: -25px;
-  }
+	.spek.mesin {
+		margin-bottom: 50px;
+		margin-left: -25px;
+	}
 
-  .spek.transmisi {
-    margin-bottom: 50px;
-    margin-left: -60px;
-  }
+	.spek.transmisi {
+		margin-bottom: 50px;
+		margin-left: -60px;
+	}
 
-  .spek.bensin {
-    margin-bottom: 50px;
-    margin-left: -120px;
-  }
+	.spek.bensin {
+		margin-bottom: 50px;
+		margin-left: -120px;
+	}
 
-  .spek.kecepatan {
-    margin-bottom: 50px;
-    margin-left: -230px;
-  }
-  .kontenMobil img {
-    width: 400px;
-  }
+	.spek.kecepatan {
+		margin-bottom: 50px;
+		margin-left: -230px;
+	}
+	.kontenMobil img {
+		width: 400px;
+	}
 
-  .jenisMobil {
-    margin-left: -60px;
-  }
+	.jenisMobil {
+		margin-left: -60px;
+	}
+
+	.kontenKiri {
+		margin-top: 110px;
+	}
+
+	.kontenKanan-dalam .form {
+		border-radius: 0px;
+		margin-left: 0px;
+		margin-right: 0px;
+		width: 100%;
+	}
+
+	.spek {
+		display: none;
+		opacity: 0.7;
+		border-radius: 10px;
+		background-color: gold;
+		height: 100px;
+		width: 300px;
+		position: absolute;
+		bottom: 100px;
+	}
 }

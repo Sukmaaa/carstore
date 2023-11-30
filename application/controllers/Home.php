@@ -35,7 +35,7 @@ class Home extends CI_Controller
             $data['kategori'] = $fields->kategori;
             $data['transmisi'] = $fields->transmisi;
             $data['stok'] = $fields->stok;
-            $data['gambar'] = $fields->gambar;
+            $data['image'] = $fields->image;
             $data['dipinjam'] = $fields->dipinjam;
             $data['dibooking'] = $fields->dibooking;
             $data['id'] = $id;

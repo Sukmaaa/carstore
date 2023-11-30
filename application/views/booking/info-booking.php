@@ -9,7 +9,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Buku Yang ingin Anda Pinjam Adalah Sebagai berikut:</td>
+                    <td>Mobil Yang ingin Anda Pinjam Adalah Sebagai berikut:</td>
                 </tr>
             <?php } ?>
             <tr>
@@ -18,10 +18,10 @@
                         <table class="table table-bordered table-striped table-hover" id="table-datatable">
                             <tr>
                                 <th>No.</th>
-                                <th>Buku</th>
-                                <th>Penulis</th>
-                                <th>Penerbit</th>
-                                <th>Tahun</th>
+                                <th>Nama Mobil</th>
+                                <th>Transmisi</th>
+                                <th>Surat</th>
+                                <th>Warna</th>
                             </tr>
                             <?php
                             $no = 1;
@@ -30,11 +30,11 @@
                                 <tr>
                                     <td><?= $no; ?></td>
                                     <td>
-                                        <img src="<?= base_url('assets/img/upload/' . $i['image']); ?>" class="rounded" alt="No Picture" width="10%">
+                                        <img src="<?= base_url('assets/img/car/' . $i['image']); ?>" class="rounded" alt="No Picture" width="100%">
                                     </td>
-                                    <td nowrap><?= $i['pengarang']; ?></td>
-                                    <td nowrap><?= $i['penerbit']; ?></td>
-                                    <td nowrap><?= $i['tahun_terbit']; ?></td>
+                                    <td nowrap><?= $i['transmisi']; ?></td>
+                                    <td nowrap><?= $i['surat']; ?></td>
+                                    <td nowrap><?= $i['warna']; ?></td>
                                 </tr>
                             <?php $no++;
                             } ?>

@@ -27,11 +27,11 @@
                         <table class="table table-bordered table-striped table-hover" id="table-datatable">
                             <tr>
                                 <th>No.</th>
-                                <th>ID Buku</th>
-                                <th>Judul Buku</th>
-                                <th>Pengarang</th>
-                                <th>Penerbit</th>
-                                <th>Tahun</th>
+                                <th>ID Mobil</th>
+                                <th>Judul Mobil</th>
+                                <th>Transmisi</th>
+                                <th>Surat</th>
+                                <th>Warna</th>
                             </tr>
                             <?php
                             $no = 1;
@@ -39,11 +39,11 @@
                             ?>
                                 <tr>
                                     <td><?= $no; ?></td>
-                                    <td><?= $d['id_buku']; ?></td>
-                                    <td><?= $d['judul_buku']; ?></td>
-                                    <td><?= $d['pengarang']; ?></td>
-                                    <td><?= $d['penerbit']; ?></td>
-                                    <td><?= $d['tahun_terbit']; ?></td>
+                                    <td><?= $d['id_mobil']; ?></td>
+                                    <td><?= $d['nama_mobil']; ?></td>
+                                    <td><?= $d['transmisi']; ?></td>
+                                    <td><?= $d['surat']; ?></td>
+                                    <td><?= $d['warna']; ?></td>
                                 </tr>
                             <?php $no++;
                             } ?>

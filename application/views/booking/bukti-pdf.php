@@ -52,7 +52,7 @@
                 <th>Nama Anggota : <?= $u->nama; ?></th>
             </tr>
             <tr>
-                <th>Buku Yang dibooking:</th>
+                <th>Mobil Yang dibooking:</th>
             </tr>
         <?php } ?>
         <tr>
@@ -61,10 +61,10 @@
                     <table border=1>
                         <tr>
                             <th>No.</th>
-                            <th>Buku</th>
-                            <th>Penulis</th>
-                            <th>penerbit</th>
-                            <th>Tahun</th>
+                            <th>Nama Mobil</th>
+                            <th>Transmisi</th>
+                            <th>Surat</th>
+                            <th>Warna</th>
                         </tr>
                         <?php
                         $no = 1;
@@ -73,11 +73,11 @@
                             <tr>
                                 <td><?= $no; ?></td>
                                 <td>
-                                    <?= $i['judul_buku']; ?>
+                                    <?= $i['nama_mobil']; ?>
                                 </td>
-                                <td><?= $i['pengarang']; ?></td>
-                                <td><?= $i['penerbit']; ?></td>
-                                <td><?= $i['tahun_terbit']; ?></td>
+                                <td><?= $i['transmisi']; ?></td>
+                                <td><?= $i['surat']; ?></td>
+                                <td><?= $i['warna']; ?></td>
                             </tr>
                         <?php $no++;
                         } ?>

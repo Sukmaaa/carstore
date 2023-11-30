@@ -28,7 +28,7 @@
 			<div class="collapse navbar-collapse" id="bs-examplenavbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="<?php echo base_url() . 'admin'; ?>"><span class="glyphicon glyphicon-home"></span> Dashboard <span class="sronly">(current)</span></a></li>
-					<li><a href="<?php echo base_url() . 'buku'; ?>"><span class="glyphicon glyphicon-folder-open"></span> Data Buku</a></li>
+					<li><a href="<?php echo base_url() . 'buku'; ?>"><span class="glyphicon glyphicon-folder-open"></span> Data Mobil</a></li>
 					<li><a href="<?php echo base_url() . 'anggota'; ?>"><span class="glyphicon glyphicon-user"></span> Data Anggota</a></li>
 					<li><a href="<?php echo base_url() . 'peminjaman'; ?>"><span class="glyphicon glyphicon-sort"></span> Transaksi Peminjaman</a></li>
 					<li><a href="<?php echo base_url() . 'laporan'; ?>"><span class="glyphicon glyphicon-list-alt"></span> Laporan</a></li>

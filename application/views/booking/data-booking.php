@@ -7,10 +7,10 @@
                         <table class="table table-bordered table-striped tablehover" id="table-datatable">
                             <tr>
                                 <th>No.</th>
-                                <th>Buku</th>
-                                <th>Penulis</th>
-                                <th>penerbit</th>
-                                <th>Tahun</th>
+                                <th>Nama Mobil</th>
+                                <th>Transmisi</th>
+                                <th>Surat</th>
+                                <th>Warna</th>
                                 <th>Pilihan</th>
                             </tr>
                             <?php
@@ -20,13 +20,13 @@
                                 <tr>
                                     <td><?= $no; ?></td>
                                     <td>
-                                        <img src="<?= base_url('assets/img/upload/' . $t['image']); ?>" class="rounded" alt="No Picture" width="10%">
+                                        <img src="<?= base_url('assets/img/car/' . $t['image']); ?>" class="rounded" alt="No Picture" width="100%">
                                     </td>
-                                    <td nowrap><?= $t['penulis']; ?></td>
-                                    <td nowrap><?= $t['penerbit']; ?></td>
-                                    <td nowrap><?= substr($t['tahun_terbit'], 0, 4); ?></td>
+                                    <td nowrap><?= $t['transmisi']; ?></td>
+                                    <td nowrap><?= $t['surat']; ?></td>
+                                    <td nowrap><?= $t['warna']; ?></td>
                                     <td nowrap>
-                                        <a href="<?= base_url('booking/hapusbooking/' . $t['id_buku']); ?>" onclick="return_konfirm('Yakin tidak Jadi Booking '.$t['judul_buku'])">
+                                        <a href="<?= base_url('booking/hapusbooking/' . $t['id_mobil']); ?>" onclick="return_konfirm('Yakin tidak Jadi Booking '.$t['nama_mobil'])">
                                             <i class="btn btn-sm btn-outline-danger fas fw fa-trash"></i>
                                         </a>
                                     </td>

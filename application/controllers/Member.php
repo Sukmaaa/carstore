@@ -30,15 +30,15 @@ class Member extends CI_Controller
                     $this->session->set_userdata($data);
                     redirect('home');
                 } else {
-                    $this->session->set_flashdata('pesan', '<div class="alert alert-danger alertmessage" role="alert">Password salah!!</div>');
+                    $this->session->set_flashdata('pesan', '<div class="notifikasi notifikasi-danger" role="alert">Password salah!!</div>');
                     redirect('home');
                 }
             } else {
-                $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-message" role="alert">User belum diaktifasi!!</div>');
+                $this->session->set_flashdata('pesan', '<div class="notifikasi notifikasi-danger" role="alert">User belum diaktifasi!!</div>');
                 redirect('home');
             }
         } else {
-            $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-message" role="alert">Email tidak terdaftar!!</div>');
+            $this->session->set_flashdata('pesan', '<div class="notifikasi notifikasi-danger" role="alert">Email tidak terdaftar!!</div>');
             redirect('home');
         }
     }
@@ -73,7 +73,7 @@ class Member extends CI_Controller
             'tanggal_input' => time()
         ];
         $this->ModelUser->simpanData($data);
-        $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Selamat!! akun anggota anda sudah dibuat.</div>');
+        $this->session->set_flashdata('pesan', '<div class="notifikasi notifikasi-success" role="alert">Selamat!! akun anggota anda sudah dibuat.</div>');
         redirect(base_url());
     }
 
@@ -105,6 +105,7 @@ class Member extends CI_Controller
         foreach ($user as $a) {
             $data = [
                 'image' => $user['image'],
+                'ktp' => $user['ktp'],
                 'user' => $user['nama'],
                 'email' => $user['email'],
                 'tanggal_input' => $user['tanggal_input'],
@@ -150,10 +151,36 @@ class Member extends CI_Controller
                 echo "Upload error: " . $error;
             }
 
+            // KTP
+            $upload_ktp = $_FILES['ktp']['name'];
+            if ($upload_ktp) {
+                $config['upload_path'] = './assets/img/profile/';
+                $config['allowed_types'] = 'gif|jpg|png|PNG|JPG|GIF|jpeg|svg|psd|PSD';
+                $config['max_size'] = '10000';
+                $config['max_width'] = '1024';
+                $config['max_height'] = '1000';
+                $config['file_name'] = 'pro' . time();
+
+                $this->load->library('upload', $config);
+                if ($this->upload->do_upload('ktp')) {
+                    $gambar_lama = $data['user']['ktp'];
+                    if ($gambar_lama != 'default.jpg') {
+                        unlink(FCPATH . 'assets/img/profile/' . $gambar_lama);
+                    }
+                    $gambar_baru = $this->upload->data('file_name');
+                    $this->db->set('ktp', $gambar_baru);
+                } else {
+                }
+            } else {
+                // Jika upload gagal, Anda dapat menangani kesalahan di sini
+                $error = $this->upload->display_errors();
+                echo "Upload error: " . $error;
+            }
+
             $this->db->set('nama', $nama);
             $this->db->where('email', $email);
             $this->db->update('user');
-            $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Profil Berhasil diubah </div>');
+            $this->session->set_flashdata('pesan', '<div class="notifikasi notifikasi-success" role="alert">Profil Berhasil diubah </div>');
             redirect('member/myprofil');
         }
     }
@@ -162,7 +189,7 @@ class Member extends CI_Controller
     {
         $this->session->unset_userdata('email');
         $this->session->unset_userdata('role_id');
-        $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Anda telah logout!!</div>');
+        $this->session->set_flashdata('pesan', '<div class="notifikasi notifikasi-success" role="alert">Anda telah logout!!</div>');
         redirect('home');
     }
 };

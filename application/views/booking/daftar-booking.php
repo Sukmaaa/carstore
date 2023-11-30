@@ -11,7 +11,7 @@
                                 <th>Tanggal Booking</th>
                                 <th>ID User</th>
                                 <th>Aksi</th>
-                                <th>Denda / Buku /Hari</th>
+                                <th>Denda / Mobil / Hari</th>
                                 <th>Lama Pinjam</th>
                             </tr>
                             <?php

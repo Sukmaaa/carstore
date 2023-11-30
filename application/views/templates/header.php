@@ -14,6 +14,7 @@
     <link href="<?= base_url('assets/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="<?= base_url('assets/'); ?>datatable/datatables.css" rel="stylesheet" type="text/css"> -->
 
+    <link rel="icon" type="image/png" href="<?= base_url('assets/img/logo/'); ?> nerostore-logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Staatliches&family=Zen+Dots&display=swap" rel="stylesheet" />
