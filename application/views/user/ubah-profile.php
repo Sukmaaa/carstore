@@ -1,6 +1,6 @@
 <!-- Begin Page Content -->
+<?= $this->session->flashdata('pesan'); ?>
 <div class="container-fluid">
-
     <div class="row">
         <div class="col-lg-9">
             <?= form_open_multipart('user/ubahprofil'); ?>
@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div class="form-group row">
-                <div class="col-sm-2">Gambar</div>
+                <div class="col-sm-2">Profile</div>
                 <div class="col-sm-10">
                     <div class="row">
                         <div class="col-sm-3">
@@ -28,6 +28,23 @@
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" id="image" name="image">
                                 <label class="custom-file-label" for="image">Pilih file</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-sm-2">Identitas</div>
+                <div class="col-sm-10">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <img src="<?= base_url('assets/img/upload/') . $user['ktp']; ?>" class="img-thumbnail" alt="">
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="ktp" name="ktp">
+                                <label class="custom-file-label" for="ktp">Pilih file</label>
                             </div>
                         </div>
                     </div>

@@ -62,7 +62,7 @@
     <div class="kontenKiri">
         <div class="kontenKiri-dalam">
             <div class="kontenMobil">
-                <img src="<?= base_url(); ?>assets/img/car/jesko1.png" alt="" />
+                <img src="<?= base_url(); ?>assets/img/car/<?= $image; ?>" width="700" height="auto" alt="" />
             </div>
             <div class="kontenSpesifikasi">
                 <ul>
@@ -78,9 +78,7 @@
                             </div>
                             <div class="keteranganSpek">
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                    Tempora, ad aut natus possimus debitis itaque esse a quis
-                                    nesciunt sapiente.
+                                    <?= $mesin; ?>
                                 </p>
                             </div>
                         </div>
@@ -103,9 +101,7 @@
                             </div>
                             <div class="keteranganSpek">
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                    Tempora, ad aut natus possimus debitis itaque esse a quis
-                                    nesciunt sapiente.
+                                    <?= $transmisi_lengkap; ?>
                                 </p>
                             </div>
                         </div>
@@ -122,9 +118,7 @@
                             </div>
                             <div class="keteranganSpek">
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                    Tempora, ad aut natus possimus debitis itaque esse a quis
-                                    nesciunt sapiente.
+                                    <?= $bahan_bakar; ?>
                                 </p>
                             </div>
                         </div>
@@ -141,9 +135,7 @@
                             </div>
                             <div class="keteranganSpek">
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                    Tempora, ad aut natus possimus debitis itaque esse a quis
-                                    nesciunt sapiente.
+                                    <?= $kecepatan; ?>
                                 </p>
                             </div>
                         </div>
@@ -160,19 +152,19 @@
                     <table>
                         <tr>
                             <td>Harga :</td>
-                            <td>Rp.4.300.000.000</td>
+                            <td>Rp. <?= $harga; ?></td>
                         </tr>
                         <tr>
                             <td>Kondisi :</td>
-                            <td>Layak Jalan</td>
+                            <td><?= $kondisi; ?></td>
                         </tr>
                         <tr>
                             <td>Surat Menyurat:</td>
-                            <td>Lengkap</td>
+                            <td><?= $surat; ?></td>
                         </tr>
                         <tr>
                             <td>Warna :</td>
-                            <td>Putih</td>
+                            <td><?= $warna; ?></td>
                         </tr>
                     </table>
                 </div>
@@ -181,41 +173,13 @@
                 </div>
             </div>
             <div class="form">
-                <div class="judulForm">
-                    <h1>TABEL PENGAJUAN RENTAL</h1>
-                    <p>
-                        Dengan ini saya menyadari pengisian form untuk <br />
-                        Mengajukan Perentalan Mobil dengan data diri sebagai Berikut
-                    </p>
-                </div>
-
-                <div class="tableForm">
-                    <form action="">
-                        <table>
-                            <tr>
-                                <td>Nama</td>
-                                <td><input type="text" /></td>
-                            </tr>
-                            <tr>
-                                <td>Foto KTP</td>
-                                <td><input type="file" /></td>
-                            </tr>
-                            <tr>
-                                <td>Alamat</td>
-                                <td><input type="text" /></td>
-                            </tr>
-                            <tr>
-                                <td>No Telepon</td>
-                                <td><input type="text" /></td>
-                            </tr>
-                            <tr>
-                                <td class="button" colspan="2">
-                                    <a href="<?= base_url('booking/tambahBooking/' . $id); ?>">Rental</a>
-                                </td>
-                            </tr>
-                        </table>
-                    </form>
-                </div>
+                <?php
+                if ($stok < 1) {
+                    echo "<a class='tombol-booking-detail' href='#'> Booking&nbsp;&nbsp 0</a>";
+                } else {
+                    echo "<a class='tombol-booking-detail' href='" . base_url('booking/tambahBooking/' . $id) . "'> Booking</a>";
+                }
+                ?>
             </div>
         </div>
     </div>

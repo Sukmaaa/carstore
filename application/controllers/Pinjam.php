@@ -28,6 +28,12 @@ class Pinjam extends CI_Controller
         $data['user'] = $this->ModelUser->cekData(['email' => $this->session->userdata('email')])->row_array();
         $data['pinjam'] = $this->db->query("SELECT * FROM booking")->result_array();
 
+        if ($data['user']['is_subscribe'] == 1) {
+            $data['denda'] = '100000';
+        } else {
+            $data['denda'] = '1000000';
+        }
+
         $this->load->view('templates/templates-admin/header', $data);
         $this->load->view('templates/templates-admin/sidebar', $data);
         $this->load->view('templates/templates-admin/topbar', $data);

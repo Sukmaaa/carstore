@@ -57,7 +57,6 @@ class User extends CI_Controller
 
             //jika ada gambar yang akan diupload
             $upload_image = $_FILES['image']['name'];
-
             if ($upload_image) {
                 $config['upload_path'] = './assets/img/profile/';
                 $config['allowed_types'] = 'gif|jpg|png';
@@ -80,11 +79,37 @@ class User extends CI_Controller
                 }
             }
 
+            // KTP
+            $upload_ktp = $_FILES['ktp']['name'];
+            if ($upload_ktp) {
+                $config['upload_path'] = './assets/img/upload/';
+                $config['allowed_types'] = 'gif|jpg|png|PNG|JPG|GIF|jpeg|svg|psd|PSD';
+                $config['max_size'] = '10000';
+                $config['max_width'] = '1024';
+                $config['max_height'] = '1000';
+                $config['file_name'] = 'pro' . time();
+
+                $this->load->library('upload', $config);
+                if ($this->upload->do_upload('ktp')) {
+                    $gambar_lama = $data['user']['ktp'];
+                    if ($gambar_lama != 'default.jpg') {
+                        unlink(FCPATH . 'assets/img/upload/' . $gambar_lama);
+                    }
+                    $gambar_baru = $this->upload->data('file_name');
+                    $this->db->set('ktp', $gambar_baru);
+                } else {
+                }
+            } else {
+                // Jika upload gagal, Anda dapat menangani kesalahan di sini
+                $error = $this->upload->display_errors();
+                echo "Upload error: " . $error;
+            }
+
             $this->db->set('nama', $nama);
             $this->db->where('email', $email);
             $this->db->update('user');
 
-            $this->session->set_flashdata('pesan', '<div class="notifikasi notidika==" role="alert">Profil Berhasil diubah </div>');
+            $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Profil Berhasil diubah </div>');
             redirect('user');
         }
     }

@@ -44,51 +44,59 @@ class Booking extends CI_Controller
 
     public function tambahBooking()
     {
-        $id_mobil = $this->uri->segment(3);
-        //memilih data mobil yang untuk dimasukkan ke tabel temp/keranjang melalui variabel $isi
-        $d = $this->db->query("SELECT * FROM mobil WHERE id='$id_mobil'")->row();
-        //berupa data2 yang akan disimpan ke dalam tabel temp/keranjang
 
-        $isi = [
-            'id_mobil' => $id_mobil,
-            'nama_mobil' => $d->nama_mobil,
-            'id_user' => $this->session->userdata('id_user'),
-            'email_user' => $this->session->userdata('email'),
-            'tgl_booking' => date('Y-m-d H:i:s'),
-            'image' => $d->image,
-            'transmisi' => $d->transmisi,
-            'surat' => $d->surat,
-            'warna' => $d->warna
-        ];
+        $user = $this->ModelUser->cekData(['email' => $this->session->userdata('email')])->row_array();
 
-        //cek apakah mobil yang di klik booking sudah ada di keranjang
-        $temp = $this->ModelBooking->getDataWhere('temp', ['id_mobil' => $id_mobil])->num_rows();
-        $userid = $this->session->userdata('id_user');
-        //cek jika sudah memasukan 3 mobil untuk dibooking dalam keranjang
-        $tempuser = $this->db->query("SELECT * FROM temp WHERE id_user ='$userid'")->num_rows();
-        //cek jika masih ada booking mobil yang belum diambil
-        $databooking = $this->db->query("SELECT * FROM booking WHERE id_user='$userid'")->num_rows();
-        if ($databooking > 0) {
-            $this->session->set_flashdata('pesan', '<div class="notifikasi notifikasi-danger" role="alert">Masih Ada booking mobil sebelumnya yang belum diambil.<br> Ambil mobil yang dibooking atau tunggu 1x24 Jam untuk bisa booking kembali </div>');
-            redirect(base_url());
-        }
-        //jika mobil yang diklik booking sudah ada di keranjang
-        if ($temp > 0) {
-            $this->session->set_flashdata('pesan', '<div class="notifikasi notifikasi-danger" role="alert">Mobil ini Sudah anda booking </div>');
+        if ($user['ktp'] == null) {
+            $this->session->set_flashdata('pesan', '<div class="alert alert-warning alert-message" role="alert">Tolong upload identitas anda terlebih dahulu!</div>');
+            redirect(base_url() . 'member/ubahprofil');
+        } else {
+            $id_mobil = $this->uri->segment(3);
+            //memilih data mobil yang untuk dimasukkan ke tabel temp/keranjang melalui variabel $isi
+            $d = $this->db->query("SELECT * FROM mobil WHERE id='$id_mobil'")->row();
+            //berupa data2 yang akan disimpan ke dalam tabel temp/keranjang
+
+            $isi = [
+                'id_mobil' => $id_mobil,
+                'nama_mobil' => $d->nama_mobil,
+                'id_user' => $this->session->userdata('id_user'),
+                'email_user' => $this->session->userdata('email'),
+                'tgl_booking' => date('Y-m-d H:i:s'),
+                'image' => $d->image,
+                'transmisi' => $d->transmisi,
+                'surat' => $d->surat,
+                'warna' => $d->warna
+            ];
+
+            //cek apakah mobil yang di klik booking sudah ada di keranjang
+            $temp = $this->ModelBooking->getDataWhere('temp', ['id_mobil' => $id_mobil])->num_rows();
+            $userid = $this->session->userdata('id_user');
+            //cek jika sudah memasukan 3 mobil untuk dibooking dalam keranjang
+            $tempuser = $this->db->query("SELECT * FROM temp WHERE id_user ='$userid'")->num_rows();
+            //cek jika masih ada booking mobil yang belum diambil
+            $databooking = $this->db->query("SELECT * FROM booking WHERE id_user='$userid'")->num_rows();
+            if ($databooking > 0) {
+                $this->session->set_flashdata('pesan', '<div class="notifikasi notifikasi-danger" role="alert">Masih Ada booking mobil sebelumnya yang belum diambil.<br> Ambil mobil yang dibooking atau tunggu 1x24 Jam untuk bisa booking kembali </div>');
+                redirect(base_url());
+            }
+            //jika mobil yang diklik booking sudah ada di keranjang
+            if ($temp > 0) {
+                $this->session->set_flashdata('pesan', '<div class="notifikasi notifikasi-danger" role="alert">Mobil ini Sudah anda booking </div>');
+                redirect(base_url() . 'home');
+            }
+            //jika Mobil yang akan dibooking sudah mencapai 3 item
+            if ($tempuser == 3) {
+                $this->session->set_flashdata('pesan', '<div class="notifikasi notifikasi-danger" role="alert">Booking Mobil Tidak Boleh Lebih dari 3</div>');
+                redirect(base_url() . 'home');
+            }
+
+            //membuat tabel temp jika belum ada
+            $this->ModelBooking->createTemp();
+            $this->ModelBooking->insertData('temp', $isi);
+            //pesan ketika berhasil memasukkan mobil ke keranjang
+            $this->session->set_flashdata('pesan', '<div class="notifikasi notifikasi-success" role="alert">Mobil berhasil ditambahkan ke keranjang </div>');
             redirect(base_url() . 'home');
         }
-        //jika Mobil yang akan dibooking sudah mencapai 3 item
-        if ($tempuser == 3) {
-            $this->session->set_flashdata('pesan', '<div class="notifikasi notifikasi-danger" role="alert">Booking Mobil Tidak Boleh Lebih dari 3</div>');
-            redirect(base_url() . 'home');
-        }
-
-        //membuat tabel temp jika belum ada
-        $this->ModelBooking->createTemp();
-        $this->ModelBooking->insertData('temp', $isi);
-        //pesan ketika berhasil memasukkan mobil ke keranjang
-        $this->session->set_flashdata('pesan', '<div class="notifikasi notifikasi-success" role="alert">Mobil berhasil ditambahkan ke keranjang </div>');
-        redirect(base_url() . 'home');
     }
 
     public function hapusbooking()

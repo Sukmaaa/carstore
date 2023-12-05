@@ -25,6 +25,9 @@ class Member extends CI_Controller
                         'email' => $user['email'],
                         'role_id' => $user['role_id'],
                         'id_user' => $user['id'],
+                        'image' => $user['image'],
+                        'ktp' => $user['ktp'],
+                        'is_subscribe' => $user['is_subscribe'],
                         'nama' => $user['nama']
                     ];
                     $this->session->set_userdata($data);
@@ -127,7 +130,7 @@ class Member extends CI_Controller
 
             //jika ada gambar yang akan diupload
             $upload_image = $_FILES['image']['name'];
-            if ($upload_image) {
+            if ($upload_image || $upload_image == "") {
                 $config['upload_path'] = './assets/img/profile/';
                 $config['allowed_types'] = 'gif|jpg|png|PNG||JPG|GIF|jpeg|svg|psd|PSD';
                 $config['max_size'] = '5000';
@@ -153,7 +156,7 @@ class Member extends CI_Controller
 
             // KTP
             $upload_ktp = $_FILES['ktp']['name'];
-            if ($upload_ktp) {
+            if ($upload_ktp || $upload_ktp == "") {
                 $config['upload_path'] = './assets/img/profile/';
                 $config['allowed_types'] = 'gif|jpg|png|PNG|JPG|GIF|jpeg|svg|psd|PSD';
                 $config['max_size'] = '10000';

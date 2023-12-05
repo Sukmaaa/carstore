@@ -39,6 +39,11 @@ class ModelMobil extends CI_Model
         return $this->db->get()->row($field);
     }
 
+    public function mobilDeskripsi($where)
+    {
+        return $this->db->get_where('deskripsi', $where);
+    }
+
     // manajemen kategori
     public function getKategori()
     {

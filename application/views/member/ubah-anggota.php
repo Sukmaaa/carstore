@@ -1,3 +1,4 @@
+<?= $this->session->flashdata('pesan'); ?>
 <!-- Begin Page Content -->
 <div class="container-fluid">
     <div class="row">
@@ -17,7 +18,7 @@
                 </div>
             </div>
             <div class="form-group row">
-                <div class="col-sm-2">Gambar</div>
+                <div class="col-sm-2">Profile</div>
                 <div class="col-sm-10">
                     <div class="row">
                         <div class="col-sm-3">
@@ -27,6 +28,22 @@
                             <div class="custom-file">
                                 <input type="file" class="custom-fileinput" id="image" name="image">
                                 <label class="custom-filelabel" for="image">Pilih file</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-2">Identitas</div>
+                <div class="col-sm-10">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <img src="<?= base_url('assets/img/profile/') . $ktp; ?>" class="img-thumbnail" alt="">
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="custom-file">
+                                <input type="file" class="custom-fileinput" id="ktp" name="ktp">
+                                <label class="custom-filelabel" for="ktp">Pilih file</label>
                             </div>
                         </div>
                     </div>

@@ -8,6 +8,7 @@
                             <tr>
                                 <th>No.</th>
                                 <th>Nama Mobil</th>
+                                <th>Gambar Mobil</th>
                                 <th>Transmisi</th>
                                 <th>Surat</th>
                                 <th>Warna</th>
@@ -19,6 +20,7 @@
                             ?>
                                 <tr>
                                     <td><?= $no; ?></td>
+                                    <td nowrap><?= $t['nama_mobil']; ?></td>
                                     <td>
                                         <img src="<?= base_url('assets/img/car/' . $t['image']); ?>" class="rounded" alt="No Picture" width="100%">
                                     </td>

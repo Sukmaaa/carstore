@@ -28,7 +28,7 @@
                                             <button type="submit" class="btn btn-sm btn-outline-info"><i class="fas fa-fw fa-cart-plus"></i> Pinjam</button>
                                         </td>
                                         <td>
-                                            <input class="form-check-user rounded-sm" style="width:100px" type="text" name="denda" id="denda" value="5000">
+                                            <input class="form-check-user rounded-sm" style="width:100px" type="text" name="denda" id="denda" value="<?= $denda ?>">
                                             <?= form_error(); ?>
                                         </td>
                                         <td>

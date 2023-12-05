@@ -127,7 +127,7 @@ nav {
 
 .kontenKiri {
 	box-sizing: border-box;
-	width: 50%;
+	width: 60%;
 	height: 100%;
 }
 
@@ -212,7 +212,7 @@ nav {
 }
 
 .kontenKanan {
-	width: 50%;
+	width: 40%;
 	height: 100%;
 }
 
@@ -252,8 +252,11 @@ nav {
 	border-top-left-radius: 20px;
 	border-bottom-left-radius: 20px;
 	background-color: rgb(73, 73, 73);
+	display: flex;
+	justify-content: end;
+	align-items: center;
 	width: 90%;
-	height: 60%;
+	height: 50%;
 	margin-left: 10%;
 }
 
@@ -323,6 +326,32 @@ td.button {
 
 .tombolBurger {
 	display: none;
+}
+
+.tombol-booking-detail {
+	box-shadow: inset 50px 1px 45px -9px #fff6af;
+	background: linear-gradient(to bottom, #ffec64 10%, #ffab23 100%);
+	background-color: #ffec64;
+	border-radius: 42px;
+	border-top-right-radius: 0px !important;
+	border-bottom-right-radius: 0px !important;
+	display: inline-block;
+	cursor: pointer;
+	color: #333333;
+	font-family: Arial;
+	font-size: 32px;
+	font-weight: bold;
+	padding: 32px 76px;
+	text-decoration: none;
+	text-shadow: -2px 0px 0px #ffee66;
+}
+.tombol-booking-detail:hover {
+	background: linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+	background-color: #ffab23;
+}
+.tombol-booking-detail:active {
+	position: relative;
+	top: 1px;
 }
 
 /* responsive */
@@ -480,6 +509,9 @@ td.button {
 		margin-left: 0px;
 		margin-right: 0px;
 		width: 100%;
+		display: flex;
+		justify-content: end;
+		align-items: end;
 	}
 
 	.spek {

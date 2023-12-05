@@ -159,12 +159,12 @@
             <div class="profile">
                 <a href="<?= base_url('member/myprofil'); ?>">
                     <div class="pic">
-                        <img src="<?= base_url(); ?>assets/img/profile/profile.jpg" alt="">
+                        <img src="<?= base_url(); ?>assets/img/profile/<?= $this->session->userdata('image')  ?>" alt="">
                     </div>
                 </a>
                 <div class="logout">
                     <a href="<?= base_url('member/myprofil'); ?>">
-                        <h1>Nama user</h1>
+                        <h1><?= $this->session->userdata('nama')  ?></h1>
                     </a>
                     <span><a href="<?= base_url('member/logout'); ?>">Logout</a></span>
                 </div>
@@ -179,6 +179,7 @@
             </ul>
         <?php } ?>
     </nav>
+
     <div class="container">
         <div class="content1">
             <div class="maincontent">
@@ -286,8 +287,6 @@
             <button type="submit" class="subscribe-button">subscribe</button>
         </div>
         <?php echo form_close(); ?>
-
-        <?= $this->session->flashdata('pesan'); ?>
 
     </div>
 </div>
